@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block head_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tool.css') }}">
+{% endblock %}
+
+{% block body %}
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('diagnostic') }}" class="nav-brand">
+                <span class="brand-mark">V</span>
+                <span class="brand-text">Vantage Advisory</span>
+            </a>
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}" class="nav-link">Main Site</a>
+                <a href="{{ url_for('diagnostic') }}" class="nav-link {% if request.endpoint == 'diagnostic' %}active{% endif %}">Upload</a>
+                <a href="{{ url_for('diagnostic_sample') }}" class="nav-link {% if request.endpoint == 'diagnostic_sample' %}active{% endif %}">Sample Data</a>
+                <span class="nav-user">{{ session.get('username', '') }}</span>
+                <a href="{{ url_for('logout') }}" class="nav-link nav-logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">Vantage Advisory &mdash; Construction Project Diagnostic Tool</p>
+            <p class="footer-sub">Confidential analysis tool for authorized consultants only.</p>
+        </div>
+    </footer>
+
+    {% block tool_js %}{% endblock %}
+{% endblock %}

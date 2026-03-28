@@ -1,0 +1,41 @@
+Task ID,Task Name,Duration,Start,Finish,Predecessors,Resource Names,Work,Actual Work,Remaining Work,Cost,Actual Cost,Baseline Start,Baseline Finish,Baseline Cost,% Complete,Critical,Total Slack,Outline Level
+1,Project Start,0 days,05-May-2025,05-May-2025,,PM,0h,0h,0h,0,0,05-May-2025,05-May-2025,0,100,Yes,0,1
+2,Mobilization & Site Prep,12 days,06-May-2025,21-May-2025,1,Site Crew,480h,480h,0h,48000,52000,06-May-2025,21-May-2025,48000,100,Yes,0,1
+3,Mass Excavation,15 days,22-May-2025,11-Jun-2025,2,Excavation Crew,600h,600h,0h,95000,102000,22-May-2025,11-Jun-2025,95000,100,Yes,0,1
+4,Underground Utilities,18 days,12-Jun-2025,07-Jul-2025,3,Utility Crew,720h,720h,0h,165000,172000,12-Jun-2025,05-Jul-2025,165000,100,No,2,1
+5,Foundation Forming & Pour,22 days,08-Jul-2025,06-Aug-2025,3,Concrete Crew,1760h,1760h,0h,485000,498000,05-Jul-2025,04-Aug-2025,485000,100,Yes,0,1
+6,Foundation Waterproofing,8 days,07-Aug-2025,18-Aug-2025,5,Waterproof Crew,320h,320h,0h,45000,48000,05-Aug-2025,14-Aug-2025,45000,100,No,3,1
+7,Slab on Grade,14 days,19-Aug-2025,05-Sep-2025,5,Concrete Crew,1120h,1120h,0h,320000,338000,15-Aug-2025,04-Sep-2025,320000,100,Yes,0,1
+8,Structural Steel Erection,28 days,08-Sep-2025,15-Oct-2025,7,Steel Crew,2240h,2240h,0h,680000,695000,05-Sep-2025,13-Oct-2025,680000,100,Yes,0,1
+9,Metal Deck & Shear Studs,12 days,16-Oct-2025,31-Oct-2025,8,Deck Crew,480h,480h,0h,185000,192000,14-Oct-2025,29-Oct-2025,185000,100,Yes,0,1
+10,Elevated Concrete Pours,18 days,03-Nov-2025,26-Nov-2025,9,Concrete Crew,1440h,1440h,0h,295000,310000,30-Oct-2025,22-Nov-2025,295000,100,Yes,0,1
+11,Exterior Wall Framing,25 days,27-Nov-2025,31-Dec-2025,10,Framing Crew,2000h,1800h,200h,280000,295000,25-Nov-2025,29-Dec-2025,265000,85,No,5,1
+12,Storefront & Curtain Wall,30 days,01-Jan-2026,11-Feb-2026,10,Glazing Crew,1200h,720h,480h,680000,425000,30-Dec-2025,09-Feb-2026,680000,55,No,3,1
+13,Roofing Installation,18 days,12-Feb-2026,09-Mar-2026,11,Roofing Crew,720h,240h,480h,520000,185000,10-Feb-2026,05-Mar-2026,520000,30,No,4,1
+14,Interior Framing - Floors 1-3,28 days,27-Nov-2025,06-Jan-2026,10,Drywall Crew A,2240h,1680h,560h,420000,385000,25-Nov-2025,02-Jan-2026,380000,65,Yes,0,1
+15,Interior Framing - Floors 4-6,28 days,07-Jan-2026,13-Feb-2026,14,Drywall Crew B,2240h,1120h,1120h,420000,345000,05-Jan-2026,11-Feb-2026,380000,45,Yes,0,1
+16,MEP Rough-In - Floors 1-3,35 days,07-Jan-2026,24-Feb-2026,"14,4",MEP Crews,4200h,2520h,1680h,850000,680000,03-Jan-2026,20-Feb-2026,820000,55,Yes,0,1
+17,MEP Rough-In - Floors 4-6,35 days,25-Feb-2026,13-Apr-2026,15,MEP Crews,4200h,1260h,2940h,850000,520000,22-Feb-2026,10-Apr-2026,820000,28,Yes,0,1
+18,Fire Sprinkler - Floors 1-3,15 days,25-Feb-2026,17-Mar-2026,16,Sprinkler Crew,600h,420h,180h,195000,145000,23-Feb-2026,13-Mar-2026,190000,65,No,3,1
+19,Fire Sprinkler - Floors 4-6,15 days,14-Apr-2026,04-May-2026,17,Sprinkler Crew,600h,0h,600h,195000,0,13-Apr-2026,01-May-2026,190000,0,No,3,1
+20,Plumbing Rough-In,30 days,07-Jan-2026,17-Feb-2026,14,Plumbing Crew,2400h,1440h,960h,410000,325000,03-Jan-2026,13-Feb-2026,395000,52,Yes,0,1
+21,HVAC Ductwork - All Floors,40 days,07-Jan-2026,03-Mar-2026,14,HVAC Crew,4800h,2640h,2160h,780000,620000,03-Jan-2026,27-Feb-2026,745000,48,Yes,0,1
+22,Electrical Rough-In - Floors 1-3,25 days,25-Feb-2026,01-Apr-2026,16,Electrical Crew A,2000h,1000h,1000h,380000,265000,23-Feb-2026,27-Mar-2026,365000,42,No,5,1
+23,Electrical Rough-In - Floors 4-6,25 days,14-Apr-2026,18-May-2026,17,Electrical Crew A,2000h,0h,2000h,380000,0,13-Apr-2026,15-May-2026,365000,0,No,3,1
+24,Drywall Hanging - Floors 1-3,22 days,02-Apr-2026,01-May-2026,"18,22",Drywall Crew A,1760h,0h,1760h,320000,0,30-Mar-2026,28-Apr-2026,305000,0,Yes,0,1
+25,Drywall Hanging - Floors 4-6,22 days,19-May-2026,17-Jun-2026,"19,23",Drywall Crew B,1760h,0h,1760h,320000,0,18-May-2026,16-Jun-2026,305000,0,Yes,0,1
+26,Drywall Finishing & Taping,18 days,04-May-2026,27-May-2026,24,Finishing Crew,1440h,0h,1440h,220000,0,29-Apr-2026,22-May-2026,210000,0,Yes,0,1
+27,Ceiling Grid & Tile,14 days,28-May-2026,16-Jun-2026,26,Ceiling Crew,560h,0h,560h,295000,0,25-May-2026,11-Jun-2026,285000,0,No,5,1
+28,Painting - All Floors,25 days,28-May-2026,01-Jul-2026,26,Paint Crew,2000h,0h,2000h,420000,0,25-May-2026,27-Jun-2026,395000,0,No,3,1
+29,Flooring Installation,22 days,02-Jul-2026,31-Jul-2026,"27,28",Flooring Crew,1760h,0h,1760h,580000,0,30-Jun-2026,29-Jul-2026,560000,0,Yes,0,1
+30,MEP Trim & Devices,18 days,02-Jul-2026,27-Jul-2026,26,MEP Trim Crew,2160h,0h,2160h,280000,0,30-Jun-2026,23-Jul-2026,265000,0,No,3,1
+31,Elevator Installation,45 days,25-Feb-2026,28-Apr-2026,10,Elevator Crew,1800h,1080h,720h,580000,385000,23-Feb-2026,24-Apr-2026,560000,60,No,8,1
+32,Controls & BAS Programming,22 days,28-Jul-2026,26-Aug-2026,30,Controls Tech,880h,0h,880h,340000,0,24-Jul-2026,22-Aug-2026,325000,0,No,5,1
+33,Fire Alarm Installation,14 days,28-Jul-2026,14-Aug-2026,30,FA Crew,560h,0h,560h,245000,0,24-Jul-2026,10-Aug-2026,235000,0,No,5,1
+34,Site Concrete & Paving,15 days,17-Aug-2026,05-Sep-2026,13,Paving Crew,600h,0h,600h,285000,0,13-Aug-2026,03-Sep-2026,275000,0,No,4,1
+35,Landscaping,10 days,08-Sep-2026,19-Sep-2026,34,Landscape Crew,400h,0h,400h,85000,0,04-Sep-2026,17-Sep-2026,80000,0,No,8,1
+36,Punchlist & Deficiency Correction,20 days,03-Aug-2026,28-Aug-2026,29,All Trades,1600h,0h,1600h,125000,0,30-Jul-2026,26-Aug-2026,120000,0,Yes,0,1
+37,Commissioning,15 days,31-Aug-2026,18-Sep-2026,36,Cx Agent,600h,0h,600h,95000,0,27-Aug-2026,16-Sep-2026,90000,0,Yes,0,1
+38,Final Inspections,8 days,21-Sep-2026,30-Sep-2026,37,PM,320h,0h,320h,15000,0,17-Sep-2026,28-Sep-2026,15000,0,Yes,0,1
+39,Tenant Improvement Coordination,35 days,02-Jul-2026,19-Aug-2026,26,TI Crew,2800h,0h,2800h,450000,0,30-Jun-2026,15-Aug-2026,435000,0,No,10,1
+40,Substantial Completion,0 days,30-Sep-2026,30-Sep-2026,38,PM,0h,0h,0h,0,0,28-Sep-2026,28-Sep-2026,0,0,Yes,0,1

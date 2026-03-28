@@ -1,0 +1,51 @@
+Activity ID,Activity Name,Original Duration,Remaining Duration,Planned Start,Planned Finish,Actual Start,Actual Finish,Early Start,Early Finish,Late Start,Late Finish,Total Float,Free Float,% Complete,Activity Status,Primary Constraint,Calendar
+GF1000,Notice to Proceed,0,0,15-Mar-2025,15-Mar-2025,15-Mar-2025,15-Mar-2025,15-Mar-2025,15-Mar-2025,15-Mar-2025,15-Mar-2025,0,0,100,Completed,,Standard 5-Day
+GF1010,Mobilization & Temp Facilities,10,0,17-Mar-2025,28-Mar-2025,17-Mar-2025,31-Mar-2025,17-Mar-2025,28-Mar-2025,24-Mar-2025,04-Apr-2025,5,0,100,Completed,,Standard 5-Day
+GF1020,Survey & Layout,8,0,31-Mar-2025,09-Apr-2025,01-Apr-2025,10-Apr-2025,31-Mar-2025,09-Apr-2025,07-Apr-2025,16-Apr-2025,5,5,100,Completed,,Standard 5-Day
+GF1030,Clearing & Grubbing - SP,12,0,10-Apr-2025,25-Apr-2025,11-Apr-2025,30-Apr-2025,10-Apr-2025,25-Apr-2025,10-Apr-2025,25-Apr-2025,0,0,100,Completed,,Standard 5-Day
+GF1040,Mass Grading Phase 1 - SP,25,0,28-Apr-2025,30-May-2025,01-May-2025,10-Jun-2025,28-Apr-2025,30-May-2025,28-Apr-2025,30-May-2025,0,0,100,Completed,,Standard 5-Day
+GF1050,Mass Grading Phase 2 - SP,20,0,02-Jun-2025,27-Jun-2025,11-Jun-2025,10-Jul-2025,02-Jun-2025,27-Jun-2025,02-Jun-2025,27-Jun-2025,0,0,100,Completed,,Standard 5-Day
+GF1060,Import Fill & Compaction - SP,18,0,30-Jun-2025,23-Jul-2025,11-Jul-2025,06-Aug-2025,30-Jun-2025,23-Jul-2025,30-Jun-2025,23-Jul-2025,0,0,100,Completed,,Standard 5-Day
+GF1070,Storm Drainage Installation - SP,22,0,24-Jul-2025,22-Aug-2025,07-Aug-2025,10-Sep-2025,24-Jul-2025,22-Aug-2025,24-Jul-2025,22-Aug-2025,0,0,100,Completed,,Standard 5-Day
+GF1080,Water & Sanitary Sewer - Sub,18,0,24-Jul-2025,18-Aug-2025,07-Aug-2025,03-Sep-2025,24-Jul-2025,18-Aug-2025,31-Jul-2025,25-Aug-2025,5,5,100,Completed,,Standard 5-Day
+GF1090,Dry Utilities Rough-In - Sub,12,0,19-Aug-2025,03-Sep-2025,04-Sep-2025,19-Sep-2025,19-Aug-2025,03-Sep-2025,28-Aug-2025,12-Sep-2025,7,7,100,Completed,,Standard 5-Day
+GF1100,Building Pad Preparation - SP,15,0,25-Aug-2025,12-Sep-2025,11-Sep-2025,01-Oct-2025,25-Aug-2025,12-Sep-2025,25-Aug-2025,12-Sep-2025,0,0,100,Completed,,Standard 5-Day
+GF1110,Foundation Excavation - SP,12,0,15-Sep-2025,30-Sep-2025,02-Oct-2025,20-Oct-2025,15-Sep-2025,30-Sep-2025,15-Sep-2025,30-Sep-2025,0,0,100,Completed,,Standard 5-Day
+GF1120,Foundation Forming & Rebar - SP,20,0,01-Oct-2025,28-Oct-2025,21-Oct-2025,18-Nov-2025,01-Oct-2025,28-Oct-2025,01-Oct-2025,28-Oct-2025,0,0,100,Completed,,Standard 5-Day
+GF1130,Foundation Concrete Pour - SP,12,0,29-Oct-2025,13-Nov-2025,19-Nov-2025,08-Dec-2025,29-Oct-2025,13-Nov-2025,29-Oct-2025,13-Nov-2025,0,0,100,Completed,,Standard 5-Day
+GF1140,Foundation Backfill - SP,8,0,14-Nov-2025,25-Nov-2025,09-Dec-2025,18-Dec-2025,14-Nov-2025,25-Nov-2025,14-Nov-2025,25-Nov-2025,0,0,100,Completed,,Standard 5-Day
+GF1150,Slab on Grade - Phase 1 SP,18,0,26-Nov-2025,19-Dec-2025,19-Dec-2025,15-Jan-2026,26-Nov-2025,19-Dec-2025,26-Nov-2025,19-Dec-2025,0,0,100,Completed,,Standard 5-Day
+GF1160,Slab on Grade - Phase 2 SP,18,5,22-Dec-2025,16-Jan-2026,16-Jan-2026,,22-Dec-2025,16-Jan-2026,22-Dec-2025,16-Jan-2026,-3,0,72,In Progress,,Standard 5-Day
+GF1170,Structural Steel Erection - Sub,35,12,19-Jan-2026,06-Mar-2026,20-Jan-2026,,19-Jan-2026,06-Mar-2026,19-Jan-2026,06-Mar-2026,-2,0,65,In Progress,,Standard 5-Day
+GF1180,Metal Deck Installation - Sub,15,8,09-Mar-2026,27-Mar-2026,,,09-Mar-2026,27-Mar-2026,09-Mar-2026,27-Mar-2026,-2,0,0,Not Started,,Standard 5-Day
+GF1190,Tilt-Up Panel Forming - SP,25,12,19-Jan-2026,20-Feb-2026,22-Jan-2026,,19-Jan-2026,20-Feb-2026,02-Feb-2026,06-Mar-2026,10,0,52,In Progress,,Standard 5-Day
+GF1200,Tilt-Up Panel Casting - SP,15,8,23-Feb-2026,13-Mar-2026,,,23-Feb-2026,13-Mar-2026,09-Mar-2026,27-Mar-2026,10,0,0,Not Started,,Standard 5-Day
+GF1210,Tilt-Up Panel Erection - SP,20,20,16-Mar-2026,10-Apr-2026,,,16-Mar-2026,10-Apr-2026,30-Mar-2026,24-Apr-2026,10,10,0,Not Started,,Standard 5-Day
+GF1220,Roofing Installation - Sub,28,28,30-Mar-2026,08-May-2026,,,30-Mar-2026,08-May-2026,30-Mar-2026,08-May-2026,0,0,0,Not Started,,Standard 5-Day
+GF1230,Overhead Doors & Dock Equipment,15,15,11-May-2026,29-May-2026,,,11-May-2026,29-May-2026,11-May-2026,29-May-2026,0,0,0,Not Started,,Standard 5-Day
+GF1240,Office Build-Out Framing - Sub,18,18,11-May-2026,03-Jun-2026,,,11-May-2026,03-Jun-2026,25-May-2026,17-Jun-2026,10,5,0,Not Started,,Standard 5-Day
+GF1250,Office MEP Rough-In - Sub,22,22,04-Jun-2026,03-Jul-2026,,,04-Jun-2026,03-Jul-2026,18-Jun-2026,17-Jul-2026,10,0,0,Not Started,,Standard 5-Day
+GF1260,Fire Sprinkler Warehouse - Sub,22,22,11-May-2026,09-Jun-2026,,,11-May-2026,09-Jun-2026,18-May-2026,16-Jun-2026,5,5,0,Not Started,,Standard 5-Day
+GF1270,Fire Sprinkler Office - Sub,10,10,10-Jun-2026,23-Jun-2026,,,10-Jun-2026,23-Jun-2026,24-Jun-2026,07-Jul-2026,10,10,0,Not Started,,Standard 5-Day
+GF1280,Warehouse Electrical - Sub,25,25,01-Jun-2026,03-Jul-2026,,,01-Jun-2026,03-Jul-2026,01-Jun-2026,03-Jul-2026,0,0,0,Not Started,,Standard 5-Day
+GF1290,Warehouse HVAC & Ventilation - Sub,18,18,01-Jun-2026,24-Jun-2026,,,01-Jun-2026,24-Jun-2026,08-Jun-2026,01-Jul-2026,5,5,0,Not Started,,Standard 5-Day
+GF1300,Warehouse Lighting - Sub,15,15,06-Jul-2026,24-Jul-2026,,,06-Jul-2026,24-Jul-2026,06-Jul-2026,24-Jul-2026,0,0,0,Not Started,,Standard 5-Day
+GF1310,Office Drywall & Finish - Sub,15,15,06-Jul-2026,24-Jul-2026,,,06-Jul-2026,24-Jul-2026,20-Jul-2026,07-Aug-2026,10,5,0,Not Started,,Standard 5-Day
+GF1320,Office Painting - Sub,10,10,27-Jul-2026,07-Aug-2026,,,27-Jul-2026,07-Aug-2026,10-Aug-2026,21-Aug-2026,10,0,0,Not Started,,Standard 5-Day
+GF1330,Office Flooring - Sub,8,8,10-Aug-2026,19-Aug-2026,,,10-Aug-2026,19-Aug-2026,24-Aug-2026,02-Sep-2026,10,10,0,Not Started,,Standard 5-Day
+GF1340,Office Ceiling Systems - Sub,8,8,10-Aug-2026,19-Aug-2026,,,10-Aug-2026,19-Aug-2026,24-Aug-2026,02-Sep-2026,10,10,0,Not Started,,Standard 5-Day
+GF1350,Retaining Walls - SP,18,8,19-Jan-2026,11-Feb-2026,22-Jan-2026,,19-Jan-2026,11-Feb-2026,09-Feb-2026,04-Mar-2026,15,10,55,In Progress,,Standard 5-Day
+GF1360,Paving - Phase 1 Sub,15,15,27-Jul-2026,14-Aug-2026,,,27-Jul-2026,14-Aug-2026,27-Jul-2026,14-Aug-2026,0,0,0,Not Started,,Standard 5-Day
+GF1370,Paving - Phase 2 Sub,12,12,17-Aug-2026,01-Sep-2026,,,17-Aug-2026,01-Sep-2026,17-Aug-2026,01-Sep-2026,0,0,0,Not Started,,Standard 5-Day
+GF1380,Striping & Signage - Sub,5,5,02-Sep-2026,08-Sep-2026,,,02-Sep-2026,08-Sep-2026,08-Sep-2026,12-Sep-2026,5,5,0,Not Started,,Standard 5-Day
+GF1390,Fencing & Gates - Sub,10,10,02-Sep-2026,15-Sep-2026,,,02-Sep-2026,15-Sep-2026,08-Sep-2026,19-Sep-2026,5,5,0,Not Started,,Standard 5-Day
+GF1400,EV Charging Stations - Sub,8,8,06-Jul-2026,15-Jul-2026,,,06-Jul-2026,15-Jul-2026,03-Aug-2026,12-Aug-2026,20,20,0,Not Started,,Standard 5-Day
+GF1410,Loading Dock Aprons - SP,12,12,01-Jun-2026,16-Jun-2026,,,01-Jun-2026,16-Jun-2026,15-Jun-2026,30-Jun-2026,10,10,0,Not Started,,Standard 5-Day
+GF1420,Landscaping & Irrigation - Sub,12,12,16-Sep-2026,01-Oct-2026,,,16-Sep-2026,01-Oct-2026,22-Sep-2026,07-Oct-2026,5,5,0,Not Started,,Standard 5-Day
+GF1430,Fire Alarm & Security - Sub,12,12,20-Aug-2026,04-Sep-2026,,,20-Aug-2026,04-Sep-2026,03-Sep-2026,18-Sep-2026,10,10,0,Not Started,,Standard 5-Day
+GF1440,BAS & Controls - Sub,15,15,07-Sep-2026,25-Sep-2026,,,07-Sep-2026,25-Sep-2026,15-Sep-2026,03-Oct-2026,6,6,0,Not Started,,Standard 5-Day
+GF1450,Punchlist & QC Walkthrough,15,15,02-Oct-2026,22-Oct-2026,,,02-Oct-2026,22-Oct-2026,08-Oct-2026,28-Oct-2026,0,0,0,Not Started,,Standard 5-Day
+GF1460,Commissioning,12,12,23-Oct-2026,09-Nov-2026,,,23-Oct-2026,09-Nov-2026,29-Oct-2026,13-Nov-2026,0,0,0,Not Started,,Standard 5-Day
+GF1470,Final Inspections & CO,8,8,10-Nov-2026,19-Nov-2026,,,10-Nov-2026,19-Nov-2026,16-Nov-2026,25-Nov-2026,0,0,0,Not Started,,Standard 5-Day
+GF1480,Owner Acceptance & Turnover,5,5,20-Nov-2026,26-Nov-2026,,,20-Nov-2026,26-Nov-2026,26-Nov-2026,02-Dec-2026,0,0,0,Not Started,,Standard 5-Day
+GF1490,Substantial Completion,0,0,26-Nov-2026,26-Nov-2026,,,26-Nov-2026,26-Nov-2026,02-Dec-2026,02-Dec-2026,0,0,0,Not Started,Must Finish On,Standard 5-Day

@@ -1,0 +1,46 @@
+Activity ID,Activity Name,Original Duration,Remaining Duration,Planned Start,Planned Finish,Actual Start,Actual Finish,Early Start,Early Finish,Late Start,Late Finish,Total Float,Free Float,% Complete,Activity Status,Primary Constraint,Calendar
+A1000,Notice to Proceed,0,0,01-Jun-2025,01-Jun-2025,01-Jun-2025,01-Jun-2025,01-Jun-2025,01-Jun-2025,01-Jun-2025,01-Jun-2025,0,0,100,Completed,,Standard 5-Day
+A1010,Mobilization & Site Setup,15,0,02-Jun-2025,20-Jun-2025,02-Jun-2025,23-Jun-2025,02-Jun-2025,20-Jun-2025,02-Jun-2025,20-Jun-2025,0,0,100,Completed,,Standard 5-Day
+A1020,Erosion Control & Tree Protection,5,0,23-Jun-2025,27-Jun-2025,24-Jun-2025,30-Jun-2025,23-Jun-2025,27-Jun-2025,25-Jun-2025,01-Jul-2025,2,0,100,Completed,,Standard 5-Day
+A1030,Mass Excavation & Grading,20,0,30-Jun-2025,25-Jul-2025,01-Jul-2025,30-Jul-2025,30-Jun-2025,25-Jul-2025,30-Jun-2025,25-Jul-2025,0,0,100,Completed,,Standard 5-Day
+A1040,Underground Utilities Rough-In,25,0,28-Jul-2025,29-Aug-2025,31-Jul-2025,05-Sep-2025,28-Jul-2025,29-Aug-2025,28-Jul-2025,29-Aug-2025,0,0,100,Completed,,Standard 5-Day
+A1050,Foundation Excavation,15,0,01-Sep-2025,19-Sep-2025,08-Sep-2025,30-Sep-2025,01-Sep-2025,19-Sep-2025,01-Sep-2025,19-Sep-2025,0,0,100,Completed,,Standard 5-Day
+A1060,Foundation Forming & Rebar,25,0,22-Sep-2025,24-Oct-2025,01-Oct-2025,12-Nov-2025,22-Sep-2025,24-Oct-2025,22-Sep-2025,24-Oct-2025,0,0,100,Completed,,Standard 5-Day
+A1070,Foundation Concrete Placement,15,0,27-Oct-2025,14-Nov-2025,13-Nov-2025,10-Dec-2025,27-Oct-2025,14-Nov-2025,27-Oct-2025,14-Nov-2025,0,0,100,Completed,,Standard 5-Day
+A1080,Foundation Waterproofing & Backfill,10,0,17-Nov-2025,28-Nov-2025,11-Dec-2025,26-Dec-2025,17-Nov-2025,28-Nov-2025,17-Nov-2025,28-Nov-2025,0,0,100,Completed,,Standard 5-Day
+A1090,Slab on Grade Prep & Pour - Wing A,12,0,01-Dec-2025,16-Dec-2025,29-Dec-2025,15-Jan-2026,01-Dec-2025,16-Dec-2025,01-Dec-2025,16-Dec-2025,0,0,100,Completed,,Standard 5-Day
+A1100,Slab on Grade Prep & Pour - Wing B,12,4,17-Dec-2025,02-Jan-2026,16-Jan-2026,,17-Dec-2025,02-Jan-2026,22-Dec-2025,07-Jan-2026,-5,0,70,In Progress,,Standard 5-Day
+A1110,Structural Steel Erection - Phase 1,30,12,05-Jan-2026,13-Feb-2026,20-Jan-2026,,05-Jan-2026,13-Feb-2026,05-Jan-2026,13-Feb-2026,-8,0,55,In Progress,,Standard 5-Day
+A1120,Structural Steel Erection - Phase 2,25,18,16-Feb-2026,20-Mar-2026,,,16-Feb-2026,20-Mar-2026,16-Feb-2026,20-Mar-2026,-12,-5,10,In Progress,,Standard 5-Day
+A1130,Metal Deck Installation,15,15,23-Mar-2026,10-Apr-2026,,,23-Mar-2026,10-Apr-2026,23-Mar-2026,10-Apr-2026,-15,0,0,Not Started,,Standard 5-Day
+A1140,Concrete on Metal Deck - Level 2,10,10,13-Apr-2026,24-Apr-2026,,,13-Apr-2026,24-Apr-2026,18-Apr-2026,01-May-2026,-12,0,0,Not Started,,Standard 5-Day
+A1150,Concrete on Metal Deck - Level 3,10,10,27-Apr-2026,08-May-2026,,,27-Apr-2026,08-May-2026,04-May-2026,15-May-2026,-10,0,0,Not Started,,Standard 5-Day
+A1160,Exterior CMU & Brick Veneer,35,30,22-Sep-2025,07-Nov-2025,29-Sep-2025,,22-Sep-2025,07-Nov-2025,15-Oct-2025,02-Dec-2025,15,5,15,In Progress,,Standard 5-Day
+A1170,Roofing & Waterproofing,20,20,11-May-2026,05-Jun-2026,,,11-May-2026,05-Jun-2026,15-May-2026,11-Jun-2026,-8,0,0,Not Started,,Standard 5-Day
+A1180,Exterior Wall Insulation & Sheathing,15,15,08-Jun-2026,26-Jun-2026,,,08-Jun-2026,26-Jun-2026,12-Jun-2026,02-Jul-2026,-6,0,0,Not Started,,Standard 5-Day
+A1190,Window & Curtain Wall Installation,25,25,29-Jun-2026,01-Aug-2026,,,29-Jun-2026,01-Aug-2026,06-Jul-2026,07-Aug-2026,-5,0,0,Not Started,,Standard 5-Day
+A1200,Interior Framing - Level 1,20,15,05-Jan-2026,30-Jan-2026,12-Jan-2026,,05-Jan-2026,30-Jan-2026,19-Jan-2026,13-Feb-2026,10,5,30,In Progress,,Standard 5-Day
+A1210,Interior Framing - Level 2,20,20,11-May-2026,05-Jun-2026,,,11-May-2026,05-Jun-2026,25-May-2026,19-Jun-2026,10,0,0,Not Started,,Standard 5-Day
+A1220,MEP Rough-In - Level 1,30,20,02-Feb-2026,13-Mar-2026,09-Feb-2026,,02-Feb-2026,13-Mar-2026,02-Feb-2026,13-Mar-2026,-5,0,35,In Progress,,Standard 5-Day
+A1230,MEP Rough-In - Level 2,30,30,08-Jun-2026,17-Jul-2026,,,08-Jun-2026,17-Jul-2026,08-Jun-2026,17-Jul-2026,-8,0,0,Not Started,,Standard 5-Day
+A1240,Fire Suppression Rough-In - Level 1,15,8,16-Mar-2026,03-Apr-2026,16-Mar-2026,,16-Mar-2026,03-Apr-2026,20-Mar-2026,09-Apr-2026,-3,0,45,In Progress,,Standard 5-Day
+A1250,Fire Suppression Rough-In - Level 2,15,15,20-Jul-2026,07-Aug-2026,,,20-Jul-2026,07-Aug-2026,24-Jul-2026,13-Aug-2026,-5,0,0,Not Started,,Standard 5-Day
+A1260,Plumbing Rough-In - Level 1,20,12,02-Feb-2026,27-Feb-2026,09-Feb-2026,,02-Feb-2026,27-Feb-2026,06-Feb-2026,05-Mar-2026,-2,0,40,In Progress,,Standard 5-Day
+A1270,HVAC Ductwork Installation - Level 1,25,18,16-Mar-2026,17-Apr-2026,16-Mar-2026,,16-Mar-2026,17-Apr-2026,16-Mar-2026,17-Apr-2026,-7,0,25,In Progress,,Standard 5-Day
+A1280,Electrical Rough-In - Level 1,25,18,16-Mar-2026,17-Apr-2026,18-Mar-2026,,16-Mar-2026,17-Apr-2026,20-Mar-2026,22-Apr-2026,-3,0,28,In Progress,,Standard 5-Day
+A1290,Elevator Installation,45,45,20-Apr-2026,19-Jun-2026,,,20-Apr-2026,19-Jun-2026,24-Apr-2026,25-Jun-2026,3,0,0,Not Started,,Standard 5-Day
+A1300,Drywall Hanging & Finishing - Level 1,25,25,20-Apr-2026,22-May-2026,,,20-Apr-2026,22-May-2026,27-Apr-2026,29-May-2026,-5,0,0,Not Started,,Standard 5-Day
+A1310,Ceiling Grid & Tile - Level 1,10,10,25-May-2026,05-Jun-2026,,,25-May-2026,05-Jun-2026,01-Jun-2026,12-Jun-2026,-5,0,0,Not Started,,Standard 5-Day
+A1320,Flooring Installation - Level 1,15,15,08-Jun-2026,26-Jun-2026,,,08-Jun-2026,26-Jun-2026,15-Jun-2026,03-Jul-2026,-5,0,0,Not Started,,Standard 5-Day
+A1330,Painting & Wall Finishes - Level 1,15,15,08-Jun-2026,26-Jun-2026,,,08-Jun-2026,26-Jun-2026,15-Jun-2026,03-Jul-2026,-5,0,0,Not Started,,Standard 5-Day
+A1340,MEP Trim & Finish - Level 1,15,15,29-Jun-2026,17-Jul-2026,,,29-Jun-2026,17-Jul-2026,06-Jul-2026,24-Jul-2026,-5,0,0,Not Started,,Standard 5-Day
+A1350,Medical Equipment Rough-In,20,20,20-Jul-2026,14-Aug-2026,,,20-Jul-2026,14-Aug-2026,27-Jul-2026,21-Aug-2026,-5,0,0,Not Started,,Standard 5-Day
+A1360,Building Automation System,25,25,17-Aug-2026,18-Sep-2026,,,17-Aug-2026,18-Sep-2026,17-Aug-2026,18-Sep-2026,-8,0,0,Not Started,,Standard 5-Day
+A1370,Fire Alarm & Security Installation,15,15,21-Sep-2026,09-Oct-2026,,,21-Sep-2026,09-Oct-2026,25-Sep-2026,15-Oct-2026,-4,0,0,Not Started,,Standard 5-Day
+A1380,Site Concrete & Paving,15,15,12-Oct-2026,30-Oct-2026,,,12-Oct-2026,30-Oct-2026,19-Oct-2026,06-Nov-2026,-5,0,0,Not Started,,Standard 5-Day
+A1390,Landscaping & Irrigation,12,12,02-Nov-2026,17-Nov-2026,,,02-Nov-2026,17-Nov-2026,09-Nov-2026,24-Nov-2026,5,5,0,Not Started,,Standard 5-Day
+A1400,Punchlist & Commissioning,20,20,18-Nov-2026,15-Dec-2026,,,18-Nov-2026,15-Dec-2026,18-Nov-2026,15-Dec-2026,-5,0,0,Not Started,,Standard 5-Day
+A1410,Final Inspections & TCO,10,10,16-Dec-2026,30-Dec-2026,,,16-Dec-2026,30-Dec-2026,16-Dec-2026,30-Dec-2026,-5,0,0,Not Started,,Standard 5-Day
+A1420,Owner Training & Turnover,5,5,31-Dec-2026,06-Jan-2027,,,31-Dec-2026,06-Jan-2027,31-Dec-2026,06-Jan-2027,-5,0,0,Not Started,,Standard 5-Day
+A1430,Substantial Completion,0,0,06-Jan-2027,06-Jan-2027,,,06-Jan-2027,06-Jan-2027,06-Jan-2027,06-Jan-2027,-5,0,0,Not Started,Must Finish On,Standard 5-Day
+A1440,Precast Panel Erection,20,15,16-Feb-2026,13-Mar-2026,23-Feb-2026,,16-Feb-2026,13-Mar-2026,23-Feb-2026,20-Mar-2026,-5,0,25,In Progress,,Standard 5-Day

@@ -1,0 +1,21 @@
+CO Number,Title,Status,Category,Created Date,Approved Date,Direct Cost,Markup,Total Amount,Cost Code,Subcontractor,Self Performed,Schedule Impact
+VCO-001,Rock excavation - unexpected subsurface conditions,Approved,Unforeseen,28-Apr-2025,15-May-2025,82000,20500,102500,31-100,,Yes,3
+VCO-002,Revised storm drain routing per civil engineer,Approved,Design Error,20-May-2025,08-Jun-2025,45000,11250,56250,33-100,,Yes,2
+VCO-003,Additional import fill - unsuitable soils,Approved,Unforeseen,15-Jun-2025,02-Jul-2025,95000,23750,118750,31-200,,Yes,4
+VCO-004,Owner-directed additional truck court depth,Approved,Owner Change,10-Jul-2025,28-Jul-2025,120000,18000,138000,31-100,,Yes,0
+VCO-005,Foundation upsizing - revised geotech recommendation,Approved,Design Error,05-Aug-2025,22-Aug-2025,68000,17000,85000,03-100,,Yes,2
+VCO-006,Added retaining wall extension - grading revisions,Approved,Design Error,18-Aug-2025,05-Sep-2025,55000,13750,68750,31-300,,Yes,3
+VCO-007,Revised fire lane width per fire marshal,Approved,Regulatory,02-Sep-2025,18-Sep-2025,24000,3600,27600,32-100,Premier Paving Co,No,0
+VCO-008,Additional concrete testing - spec compliance,Approved,Unforeseen,22-Sep-2025,08-Oct-2025,18000,4500,22500,03-100,,Yes,0
+VCO-009,Tilt-up panel thickness increase per structural,Approved,Design Error,15-Oct-2025,02-Nov-2025,78000,19500,97500,03-300,,Yes,2
+VCO-010,Added loading dock apron reinforcement,Approved,Design Error,05-Nov-2025,20-Nov-2025,42000,10500,52500,03-400,,Yes,0
+VCO-011,Revised slab joint layout - increased panels,Pending,Design Error,28-Nov-2025,,19800,4950,24750,03-200,,Yes,0
+VCO-012,Owner-directed EV infrastructure expansion,Approved,Owner Change,12-Dec-2025,02-Jan-2026,65000,9750,74750,26-300,Volta Electric LLC,No,0
+VCO-013,Additional retaining wall drainage,Pending,Design Error,08-Jan-2026,,19200,4800,24000,31-300,,Yes,0
+VCO-014,Roof drain relocation per MEP coordination,Pending,Design Error,22-Jan-2026,,19000,2850,21850,07-100,Apex Roofing Inc,No,0
+VCO-015,Added concrete washout area & access road,Pending,Unforeseen,05-Feb-2026,,19600,4900,24500,31-100,,Yes,0
+VCO-016,Structural steel connection revisions,Pending,Design Error,18-Feb-2026,,22000,3300,25300,05-100,Patriot Steel Inc,No,0
+VCO-017,Additional site lighting per owner request,Pending,Owner Change,02-Mar-2026,,19000,5700,24700,26-200,,Yes,0
+VCO-018,Slab repair - early loading damage,Pending,Contractor,12-Mar-2026,,19500,4875,24375,03-200,,Yes,0
+VCO-019,Added concrete bollards at dock doors,Pending,Design Error,18-Mar-2026,,19200,4800,24000,03-400,,Yes,0
+VCO-020,Storm drain cleanout additions,Draft,Design Error,25-Mar-2026,,18000,4500,22500,33-100,,Yes,0

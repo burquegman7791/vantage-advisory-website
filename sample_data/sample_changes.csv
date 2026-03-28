@@ -1,0 +1,16 @@
+CO Number,Title,Status,Type,Created Date,Approved Date,Amount,Cost Code,Markup Amount,Direct Cost,Schedule Impact Days
+CO-001,Unsuitable Soil Conditions - Additional Excavation,Approved,Unforeseen,2025-02-15,2025-03-10,72000,31-100,9360,62640,5
+CO-002,Revised Foundation Design per Geotech Report,Approved,Design Error,2025-03-01,2025-04-05,125000,03-100,16250,108750,8
+CO-003,Owner-Requested Lobby Finish Upgrade,Approved,Owner,2025-03-15,2025-04-01,85000,09-100,0,85000,0
+CO-004,Steel Connection Detail Revisions,Approved,Design Error,2025-04-10,2025-05-15,180000,05-100,27000,153000,12
+CO-005,Underground Utility Conflict - Reroute,Approved,Unforeseen,2025-04-22,2025-05-20,55000,33-100,7150,47850,3
+CO-006,Added Emergency Generator,Approved,Owner,2025-05-01,2025-06-01,68000,26-100,0,68000,0
+CO-007,HVAC Controls Specification Change,Approved,Design Error,2025-06-15,2025-07-20,95000,23-100,14250,80750,5
+CO-008,Waterproofing Scope Increase - Below Grade,Pending,Unforeseen,2025-07-01,,42000,07-100,5460,36540,3
+CO-009,Structural Beam Reinforcement,Pending,Design Error,2025-07-15,,88000,05-100,13200,74800,7
+CO-010,Owner AV System Addition,Approved,Owner,2025-06-01,2025-06-20,45000,27-100,0,45000,0
+CO-011,Fire Rating Upgrade - 3rd Floor,Pending,Regulatory,2025-08-01,,35000,21-100,5250,29750,0
+CO-012,Rooftop Unit Structural Support Redesign,Pending,Design Error,2025-08-10,,65000,05-100,9750,55250,4
+CO-013,Exterior Masonry Color Change,Approved,Owner,2025-05-20,2025-06-10,28000,04-100,0,28000,0
+CO-014,Additional Electrical Circuits - Tenant Request,Pending,Owner,2025-08-25,,55000,26-100,0,55000,0
+CO-015,Concrete Repair - Honeycombing at Level 2,Pending,Contractor,2025-09-01,,32000,03-100,4800,27200,2

@@ -1,0 +1,292 @@
+{% extends "tool/base_tool.html" %}
+
+{% block title %}Red Flag Report - Vantage Diagnostic Tool{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/report.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="report-page">
+
+    <!-- Report Header -->
+    <div class="report-header">
+        <div class="report-header-content">
+            <div class="report-title-block">
+                <h1>Red Flag Report</h1>
+                <p class="report-date">Generated {{ report.generated_at }}</p>
+            </div>
+            <div class="report-actions">
+                <button onclick="window.print()" class="btn btn-outline btn-small">Print Report</button>
+                <a href="{{ url_for('diagnostic') }}" class="btn btn-outline btn-small">New Analysis</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Notes -->
+    {% if report.data_notes %}
+    <div class="data-notes">
+        <h4>Data Notes</h4>
+        <ul>
+            {% for note in report.data_notes %}
+            <li>{{ note }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Executive Summary -->
+    <section class="report-section executive-summary">
+        <h2>Executive Summary</h2>
+        <div class="overall-health">
+            <div class="health-gauge {{ report.overall_label|lower }}">
+                <div class="gauge-value">{{ report.overall_score }}</div>
+                <div class="gauge-label">Overall Risk Score</div>
+                <div class="gauge-status {{ report.overall_label|lower }}">{{ report.overall_label }}</div>
+            </div>
+        </div>
+
+        <!-- Four Failure Mode Gauges -->
+        <div class="failure-mode-grid">
+            {% for fm in report.failure_modes %}
+            <div class="failure-mode-card {{ fm.label|lower }}">
+                <div class="fm-score">{{ fm.score }}</div>
+                <div class="fm-name">{{ fm.name }}</div>
+                <div class="fm-status {{ fm.label|lower }}">{{ fm.label }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Top Findings -->
+    <section class="report-section">
+        <h2>Top Findings</h2>
+        <p class="section-desc">The most significant issues identified, ranked by severity.</p>
+        <div class="findings-list">
+            {% for finding in report.top_findings %}
+            <div class="finding-item {{ finding.severity|lower }}">
+                <div class="finding-severity">
+                    <span class="severity-badge {{ finding.severity|lower }}">{{ finding.severity }}</span>
+                </div>
+                <div class="finding-content">
+                    <div class="finding-header">
+                        <span class="finding-metric">{{ finding.metric }}</span>
+                        <span class="finding-value">{{ finding.value }}</span>
+                    </div>
+                    <p class="finding-explanation">{{ finding.explanation }}</p>
+                    <span class="finding-mode">{{ finding.failure_mode }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Failure Mode Details -->
+    {% for fm in report.failure_modes %}
+    <section class="report-section fm-detail-section">
+        <div class="fm-detail-header {{ fm.label|lower }}">
+            <h2>{{ fm.name }}</h2>
+            <div class="fm-detail-score">
+                <span class="score-number">{{ fm.score }}</span>
+                <span class="score-label">/ 100</span>
+                <span class="severity-badge {{ fm.label|lower }}">{{ fm.label }}</span>
+            </div>
+        </div>
+        <p class="fm-description">{{ fm.description }}</p>
+
+        <div class="metrics-table-wrapper">
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Threshold</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for detail in fm.details %}
+                    <tr class="{{ detail.severity|lower }}">
+                        <td>
+                            <div class="metric-name">{{ detail.metric }}</div>
+                            <div class="metric-explanation">{{ detail.explanation }}</div>
+                        </td>
+                        <td class="metric-value">{{ detail.value }}</td>
+                        <td class="metric-threshold">{{ detail.threshold }}</td>
+                        <td><span class="severity-badge {{ detail.severity|lower }}">{{ detail.severity }}</span></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    {% endfor %}
+
+    <!-- Budget Summary -->
+    {% if report.budget_summary %}
+    <section class="report-section">
+        <h2>Budget Overview</h2>
+        <div class="summary-grid">
+            <div class="summary-card">
+                <span class="summary-label">Original Budget</span>
+                <span class="summary-value">${{ "{:,.0f}".format(report.budget_summary.total_original_budget or 0) }}</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Revised Budget</span>
+                <span class="summary-value">${{ "{:,.0f}".format(report.budget_summary.total_revised_budget or 0) }}</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Actual Cost to Date</span>
+                <span class="summary-value">${{ "{:,.0f}".format(report.budget_summary.total_actual_cost or 0) }}</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Forecast at Completion</span>
+                <span class="summary-value">${{ "{:,.0f}".format(report.budget_summary.total_forecast or 0) }}</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">CPI</span>
+                <span class="summary-value {% if report.budget_summary.cpi and report.budget_summary.cpi < 0.90 %}text-red{% elif report.budget_summary.cpi and report.budget_summary.cpi < 0.95 %}text-yellow{% else %}text-green{% endif %}">
+                    {{ "%.3f"|format(report.budget_summary.cpi) if report.budget_summary.cpi else 'N/A' }}
+                </span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">TCPI</span>
+                <span class="summary-value {% if report.budget_summary.tcpi and report.budget_summary.tcpi > 1.10 %}text-red{% elif report.budget_summary.tcpi and report.budget_summary.tcpi > 1.05 %}text-yellow{% else %}text-green{% endif %}">
+                    {{ "%.3f"|format(report.budget_summary.tcpi) if report.budget_summary.tcpi else 'N/A' }}
+                </span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Cost Variance</span>
+                <span class="summary-value {% if report.budget_summary.cv and report.budget_summary.cv < 0 %}text-red{% else %}text-green{% endif %}">
+                    ${{ "{:,.0f}".format(report.budget_summary.cv or 0) }}
+                </span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">% Complete (Weighted)</span>
+                <span class="summary-value">{{ "%.1f%%"|format((report.budget_summary.weighted_percent_complete or 0) * 100) }}</span>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Schedule Summary -->
+    {% if report.schedule_summary %}
+    <section class="report-section">
+        <h2>Schedule Overview</h2>
+        <div class="summary-grid">
+            <div class="summary-card">
+                <span class="summary-label">Total Activities</span>
+                <span class="summary-value">{{ report.schedule_summary.total_activities }}</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Critical Activity Ratio</span>
+                <span class="summary-value {% if report.schedule_summary.critical_ratio and report.schedule_summary.critical_ratio > 0.25 %}text-red{% elif report.schedule_summary.critical_ratio and report.schedule_summary.critical_ratio > 0.15 %}text-yellow{% else %}text-green{% endif %}">
+                    {{ "%.0f%%"|format((report.schedule_summary.critical_ratio or 0) * 100) }}
+                </span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">BEI</span>
+                <span class="summary-value {% if report.schedule_summary.bei and report.schedule_summary.bei < 0.80 %}text-red{% elif report.schedule_summary.bei and report.schedule_summary.bei < 0.90 %}text-yellow{% else %}text-green{% endif %}">
+                    {{ "%.3f"|format(report.schedule_summary.bei) if report.schedule_summary.bei else 'N/A' }}
+                </span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Negative Float Activities</span>
+                <span class="summary-value {% if report.schedule_summary.negative_float_count and report.schedule_summary.negative_float_count > 5 %}text-red{% elif report.schedule_summary.negative_float_count and report.schedule_summary.negative_float_count > 0 %}text-yellow{% else %}text-green{% endif %}">
+                    {{ report.schedule_summary.negative_float_count or 0 }}
+                </span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Logic Density</span>
+                <span class="summary-value">{{ "%.2f"|format(report.schedule_summary.logic_density or 0) }}</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Missing Predecessors</span>
+                <span class="summary-value">{{ "%.0f%%"|format((report.schedule_summary.missing_predecessors_ratio or 0) * 100) }}</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Average Float</span>
+                <span class="summary-value">{{ "%.1f"|format(report.schedule_summary.avg_float or 0) }} days</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Activities</span>
+                <span class="summary-value summary-small">{{ report.schedule_summary.complete_count or 0 }} done / {{ report.schedule_summary.in_progress_count or 0 }} active / {{ report.schedule_summary.not_started_count or 0 }} pending</span>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Change Order Summary -->
+    {% if report.change_summary %}
+    <section class="report-section">
+        <h2>Change Order Overview</h2>
+        <div class="summary-grid">
+            <div class="summary-card">
+                <span class="summary-label">Total Change Orders</span>
+                <span class="summary-value">{{ report.change_summary.total_cos }}</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Total CO Amount</span>
+                <span class="summary-value">${{ "{:,.0f}".format(report.change_summary.total_co_amount or 0) }}</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">CO Rate</span>
+                <span class="summary-value {% if report.change_summary.co_rate and report.change_summary.co_rate > 10 %}text-red{% elif report.change_summary.co_rate and report.change_summary.co_rate > 5 %}text-yellow{% else %}text-green{% endif %}">
+                    {{ "%.1f%%"|format(report.change_summary.co_rate or 0) }}
+                </span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Pending COs</span>
+                <span class="summary-value">{{ report.change_summary.pending_count or 0 }} (${{ "{:,.0f}".format(report.change_summary.pending_backlog_pct or 0) }}% of contract)</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Avg. Pending Age</span>
+                <span class="summary-value {% if report.change_summary.avg_pending_age and report.change_summary.avg_pending_age > 30 %}text-red{% elif report.change_summary.avg_pending_age and report.change_summary.avg_pending_age > 21 %}text-yellow{% else %}text-green{% endif %}">
+                    {{ "%.0f"|format(report.change_summary.avg_pending_age or 0) }} days
+                </span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Schedule Impact</span>
+                <span class="summary-value">{{ report.change_summary.total_schedule_impact or 0 }} days</span>
+            </div>
+            {% if report.change_summary.type_distribution %}
+            <div class="summary-card wide">
+                <span class="summary-label">CO Type Distribution</span>
+                <div class="type-dist">
+                    {% for type_name, count in report.change_summary.type_distribution.items() %}
+                    <span class="type-badge">{{ type_name }}: {{ count }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Recommendations -->
+    {% if report.recommendations %}
+    <section class="report-section">
+        <h2>Recommendations</h2>
+        <p class="section-desc">Prioritized actions based on the findings above.</p>
+        <div class="recommendations-list">
+            {% for rec in report.recommendations %}
+            <div class="recommendation-item {{ rec.severity|lower }}">
+                <div class="rec-header">
+                    <span class="severity-badge {{ rec.severity|lower }}">{{ rec.severity }}</span>
+                    <span class="rec-metric">{{ rec.metric }}</span>
+                    <span class="rec-mode">{{ rec.failure_mode }}</span>
+                </div>
+                <p class="rec-text">{{ rec.recommendation }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Footer -->
+    <div class="report-footer">
+        <p>This report was generated automatically by the Vantage Advisory Diagnostic Tool. Findings should be validated by qualified professionals before taking action. This analysis is based solely on the data provided and may not reflect all project conditions.</p>
+    </div>
+
+</div>
+{% endblock %}

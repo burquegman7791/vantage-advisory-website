@@ -1,0 +1,275 @@
+{% extends "tool/base_tool.html" %}
+
+{% block title %}Sample Projects - Vantage Diagnostic Tool{% endblock %}
+
+{% block content %}
+<div class="sample-page">
+    <div class="page-header">
+        <h1>Sample Projects</h1>
+        <p class="subtitle">These are sample projects with realistic data from common construction management platforms. Select the files you want to analyze and run the diagnostic to see a full Red Flag Report.</p>
+    </div>
+
+    {% if error %}
+    <div class="alert alert-error">
+        <span class="alert-icon">!</span>
+        <span>{{ error }}</span>
+    </div>
+    {% endif %}
+
+    <div class="sample-intro">
+        <p>Each project below represents a different failure pattern commonly encountered on troubled construction projects. The data was modeled after real exports from Procore, Sage 300 CRE, Viewpoint Vista, Primavera P6, and Microsoft Project. Select one or more file types and run the analysis to see what the diagnostic engine finds.</p>
+    </div>
+
+    <!-- Project 1: Riverside Medical Center -->
+    <div class="project-card">
+        <div class="project-card-header">
+            <div class="project-card-title">
+                <h2>Riverside Medical Center</h2>
+                <div class="project-meta">
+                    <span class="project-value">$42M Hospital Expansion</span>
+                    <span class="project-source">Procore + Primavera P6</span>
+                </div>
+            </div>
+            <div class="project-badge badge-red">Bad Estimate</div>
+        </div>
+        <p class="project-desc">A hospital expansion project suffering from a fundamentally flawed original estimate. Unit costs were below market from day one, and multiple scope items were missing from the bid documents. The CPI has been poor since the start of construction, with the most significant overruns in structural and MEP trades.</p>
+        <form action="{{ url_for('analyze_sample') }}" method="post" class="project-form">
+            <input type="hidden" name="project" value="1">
+            <div class="file-selector">
+                <label class="file-check">
+                    <input type="checkbox" name="files" value="project1_budget_procore.csv" checked>
+                    <span class="check-content">
+                        <span class="check-icon budget-icon">$</span>
+                        <span class="check-details">
+                            <span class="check-label">Budget Report</span>
+                            <span class="check-file">project1_budget_procore.csv</span>
+                        </span>
+                    </span>
+                </label>
+                <label class="file-check">
+                    <input type="checkbox" name="files" value="project1_schedule_p6.csv" checked>
+                    <span class="check-content">
+                        <span class="check-icon schedule-icon">&#9776;</span>
+                        <span class="check-details">
+                            <span class="check-label">Schedule Export</span>
+                            <span class="check-file">project1_schedule_p6.csv</span>
+                        </span>
+                    </span>
+                </label>
+                <label class="file-check">
+                    <input type="checkbox" name="files" value="project1_changes_procore.csv" checked>
+                    <span class="check-content">
+                        <span class="check-icon change-icon">&#916;</span>
+                        <span class="check-details">
+                            <span class="check-label">Change Orders</span>
+                            <span class="check-file">project1_changes_procore.csv</span>
+                        </span>
+                    </span>
+                </label>
+            </div>
+            <div class="project-actions">
+                <button type="submit" class="btn btn-primary project-analyze-btn">
+                    <span class="btn-text">Run Analysis</span>
+                    <span class="btn-loading" style="display:none;">Analyzing...</span>
+                </button>
+                <div class="download-links">
+                    <a href="{{ url_for('download_sample', filename='project1_budget_procore.csv') }}" class="dl-link">Download Budget</a>
+                    <a href="{{ url_for('download_sample', filename='project1_schedule_p6.csv') }}" class="dl-link">Download Schedule</a>
+                    <a href="{{ url_for('download_sample', filename='project1_changes_procore.csv') }}" class="dl-link">Download Changes</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Project 2: Summit Tower Mixed-Use -->
+    <div class="project-card">
+        <div class="project-card-header">
+            <div class="project-card-title">
+                <h2>Summit Tower Mixed-Use</h2>
+                <div class="project-meta">
+                    <span class="project-value">$28M Commercial Building</span>
+                    <span class="project-source">Sage 300 CRE + MS Project</span>
+                </div>
+            </div>
+            <div class="project-badge badge-yellow">Operations + Change Failure</div>
+        </div>
+        <p class="project-desc">A mixed-use commercial tower where the estimate was reasonable, but execution has gone sideways. Labor productivity is poor, overtime is running high, and change orders are accumulating without formal approval. Multiple trades report receiving verbal direction to proceed, but the paperwork never follows. The pending CO backlog keeps growing.</p>
+        <form action="{{ url_for('analyze_sample') }}" method="post" class="project-form">
+            <input type="hidden" name="project" value="2">
+            <div class="file-selector">
+                <label class="file-check">
+                    <input type="checkbox" name="files" value="project2_budget_sage.csv" checked>
+                    <span class="check-content">
+                        <span class="check-icon budget-icon">$</span>
+                        <span class="check-details">
+                            <span class="check-label">Budget Report</span>
+                            <span class="check-file">project2_budget_sage.csv</span>
+                        </span>
+                    </span>
+                </label>
+                <label class="file-check">
+                    <input type="checkbox" name="files" value="project2_schedule_msproject.csv" checked>
+                    <span class="check-content">
+                        <span class="check-icon schedule-icon">&#9776;</span>
+                        <span class="check-details">
+                            <span class="check-label">Schedule Export</span>
+                            <span class="check-file">project2_schedule_msproject.csv</span>
+                        </span>
+                    </span>
+                </label>
+                <label class="file-check">
+                    <input type="checkbox" name="files" value="project2_changes_sage.csv" checked>
+                    <span class="check-content">
+                        <span class="check-icon change-icon">&#916;</span>
+                        <span class="check-details">
+                            <span class="check-label">Change Orders</span>
+                            <span class="check-file">project2_changes_sage.csv</span>
+                        </span>
+                    </span>
+                </label>
+            </div>
+            <div class="project-actions">
+                <button type="submit" class="btn btn-primary project-analyze-btn">
+                    <span class="btn-text">Run Analysis</span>
+                    <span class="btn-loading" style="display:none;">Analyzing...</span>
+                </button>
+                <div class="download-links">
+                    <a href="{{ url_for('download_sample', filename='project2_budget_sage.csv') }}" class="dl-link">Download Budget</a>
+                    <a href="{{ url_for('download_sample', filename='project2_schedule_msproject.csv') }}" class="dl-link">Download Schedule</a>
+                    <a href="{{ url_for('download_sample', filename='project2_changes_sage.csv') }}" class="dl-link">Download Changes</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Project 3: Greenfield Distribution Center -->
+    <div class="project-card">
+        <div class="project-card-header">
+            <div class="project-card-title">
+                <h2>Greenfield Distribution Center</h2>
+                <div class="project-meta">
+                    <span class="project-value">$65M Industrial Facility</span>
+                    <span class="project-source">Viewpoint Vista + Primavera P6</span>
+                </div>
+            </div>
+            <div class="project-badge badge-purple">Conflict of Agency</div>
+        </div>
+        <p class="project-desc">A large distribution center where the GC is self-performing a disproportionate share of the work -- particularly concrete, sitework, and earthwork. Self-performed trades are consistently running over budget while subcontracted work stays on track. Change orders cluster suspiciously below approval thresholds, and markups on self-performed changes are notably higher.</p>
+        <form action="{{ url_for('analyze_sample') }}" method="post" class="project-form">
+            <input type="hidden" name="project" value="3">
+            <div class="file-selector">
+                <label class="file-check">
+                    <input type="checkbox" name="files" value="project3_budget_viewpoint.csv" checked>
+                    <span class="check-content">
+                        <span class="check-icon budget-icon">$</span>
+                        <span class="check-details">
+                            <span class="check-label">Budget Report</span>
+                            <span class="check-file">project3_budget_viewpoint.csv</span>
+                        </span>
+                    </span>
+                </label>
+                <label class="file-check">
+                    <input type="checkbox" name="files" value="project3_schedule_p6.csv" checked>
+                    <span class="check-content">
+                        <span class="check-icon schedule-icon">&#9776;</span>
+                        <span class="check-details">
+                            <span class="check-label">Schedule Export</span>
+                            <span class="check-file">project3_schedule_p6.csv</span>
+                        </span>
+                    </span>
+                </label>
+                <label class="file-check">
+                    <input type="checkbox" name="files" value="project3_changes_viewpoint.csv" checked>
+                    <span class="check-content">
+                        <span class="check-icon change-icon">&#916;</span>
+                        <span class="check-details">
+                            <span class="check-label">Change Orders</span>
+                            <span class="check-file">project3_changes_viewpoint.csv</span>
+                        </span>
+                    </span>
+                </label>
+            </div>
+            <div class="project-actions">
+                <button type="submit" class="btn btn-primary project-analyze-btn">
+                    <span class="btn-text">Run Analysis</span>
+                    <span class="btn-loading" style="display:none;">Analyzing...</span>
+                </button>
+                <div class="download-links">
+                    <a href="{{ url_for('download_sample', filename='project3_budget_viewpoint.csv') }}" class="dl-link">Download Budget</a>
+                    <a href="{{ url_for('download_sample', filename='project3_schedule_p6.csv') }}" class="dl-link">Download Schedule</a>
+                    <a href="{{ url_for('download_sample', filename='project3_changes_viewpoint.csv') }}" class="dl-link">Download Changes</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="data-format-section">
+        <h3>Data Format Guide</h3>
+        <p>The tool uses fuzzy matching to recognize column headers from common construction software. Here are the column names it looks for:</p>
+
+        <div class="format-table-wrapper">
+            <h4>Budget / Cost Data</h4>
+            <table class="format-table">
+                <thead>
+                    <tr><th>Field</th><th>Common Column Names</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Cost Code</td><td>Cost Code, WBS, Account Code, Budget Code, Phase</td></tr>
+                    <tr><td>Description</td><td>Description, Name, Scope, Budget Item</td></tr>
+                    <tr><td>Original Budget</td><td>Original Budget, Budget, Contract Value, Original Estimate, Original Est Cost</td></tr>
+                    <tr><td>Actual Cost</td><td>Actual Cost, Actuals, Cost to Date, ACWP, Direct Costs</td></tr>
+                    <tr><td>Forecast</td><td>EAC, Forecast at Completion, Projected Cost, Estimated Cost at Completion</td></tr>
+                    <tr><td>% Complete</td><td>Percent Complete, % Complete, Pct Complete, Progress</td></tr>
+                </tbody>
+            </table>
+
+            <h4>Schedule Data</h4>
+            <table class="format-table">
+                <thead>
+                    <tr><th>Field</th><th>Common Column Names</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Activity ID</td><td>Activity ID, Task ID, UID</td></tr>
+                    <tr><td>Activity Name</td><td>Activity Name, Task Name, Description</td></tr>
+                    <tr><td>Duration</td><td>Original Duration, Planned Duration, Duration</td></tr>
+                    <tr><td>Float</td><td>Total Float, Float, Total Slack, Slack</td></tr>
+                    <tr><td>Dates</td><td>Early Start, Early Finish, Late Start, Late Finish, Start, Finish</td></tr>
+                    <tr><td>Predecessors</td><td>Predecessors, Dependencies</td></tr>
+                </tbody>
+            </table>
+
+            <h4>Change Order Data</h4>
+            <table class="format-table">
+                <thead>
+                    <tr><th>Field</th><th>Common Column Names</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>CO Number</td><td>CO Number, CO #, Change Order Number, Number</td></tr>
+                    <tr><td>Status</td><td>Status, CO Status, Approval Status</td></tr>
+                    <tr><td>Type</td><td>Type, Category, Reason, Cause, Change Order Type</td></tr>
+                    <tr><td>Amount</td><td>Amount, Total Amount, Value, Cost</td></tr>
+                    <tr><td>Dates</td><td>Created Date, Approved Date, Date Submitted</td></tr>
+                    <tr><td>Markup</td><td>Markup, Markup Amount, OH&P, Overhead</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.project-form').forEach(function(form) {
+        form.addEventListener('submit', function(event) {
+            var btn = form.querySelector('.project-analyze-btn');
+            var checks = form.querySelectorAll('input[name="files"]:checked');
+            if (checks.length === 0) {
+                alert('Please select at least one file to analyze.');
+                event.preventDefault();
+                return;
+            }
+            btn.querySelector('.btn-text').style.display = 'none';
+            btn.querySelector('.btn-loading').style.display = 'inline';
+            btn.disabled = true;
+        });
+    });
+</script>
+{% endblock %}

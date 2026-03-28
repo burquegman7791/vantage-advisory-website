@@ -1,0 +1,13 @@
+CO Number,Description,Status,Type,Date Submitted,Date Approved,Original Amount,Approved Amount,Cost Code,Schedule Impact Days,Notes
+CO-001,Unforeseen rock removal during excavation,Approved,Unforeseen,22-May-2025,10-Jun-2025,45000,42000,31-100,2,Rock encountered at 8 ft depth not indicated in geotech report
+CO-002,Revised structural connections per RFI-018,Approved,Design Error,15-Jul-2025,05-Aug-2025,45000,38000,05-100,0,Engineer revised connection details after field coordination
+CO-003,Owner-directed lobby upgrade - stone cladding,Approved,Owner Change,01-Aug-2025,28-Aug-2025,85000,85000,09-300,0,Owner upgraded lobby finishes from porcelain to natural stone
+CO-004,Added roof fall protection anchors per OSHA,Approved,Regulatory,12-Sep-2025,30-Sep-2025,28000,25000,07-100,0,Required permanent roof anchors not in original design
+CO-005,HVAC ductwork revisions - coordination conflicts,Submitted,Design Error,15-Nov-2025,,68000,,23-100,3,Multiple duct routing conflicts identified during BIM coordination. Verbal direction given to proceed with revised routing - awaiting formal CO approval
+CO-006,Additional blocking for millwork support,Submitted,Design Error,02-Dec-2025,,32000,,06-100,0,Structural backing required for reception desk and built-in casework not shown on drawings. GC directed crew to install - no written authorization yet
+CO-007,Plumbing riser relocation - structural conflict,Submitted,Design Error,18-Dec-2025,,55000,,22-100,2,Three plumbing risers conflict with post-tension tendons. Plumber proceeded with reroute per field meeting direction. No written approval
+CO-008,Drywall repair from water damage - roof leak,Submitted,Unforeseen,08-Jan-2026,,42000,,09-100,0,Heavy rain caused water intrusion through incomplete roof. 2400 SF drywall replacement needed. Crew performed work immediately
+CO-009,Electrical panel schedule revisions,Submitted,Design Error,22-Jan-2026,,38000,,26-100,0,Panel schedules did not match one-line diagram. Electrician rewired per engineer verbal direction during site walk. Waiting on formal CCD
+CO-010,Extended general conditions - weather delays,Submitted,Unforeseen,05-Feb-2026,,95000,,01-100,8,18 days of weather delays through winter. Time extension and associated GC costs. Submitted but no formal response from owner
+CO-011,Added smoke control system - code requirement,Pending,Regulatory,20-Feb-2026,,125000,,23-100,5,Fire marshal required smoke control in atrium per IBC 404. Not in original mechanical design. Major scope addition
+CO-012,Floor leveling compound - slab tolerance issues,Submitted,Unforeseen,10-Mar-2026,,48000,,09-300,0,Elevated slabs exceeded FF/FL tolerances. Self-leveling compound required before flooring. Work being performed - no approval received

@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vantage Advisory Group — Construction & Capital Project Advisory</title>
-    <meta name="description" content="Independent diagnostic and advisory services for troubled construction and capital projects. We find the red flags first.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+{% extends "base.html" %}
 
+{% block title %}Vantage Advisory Group — Construction & Capital Project Advisory{% endblock %}
+
+{% block head_css %}
+<meta name="description" content="Independent diagnostic and advisory services for troubled construction and capital projects. We find the red flags first.">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+{% endblock %}
+
+{% block body %}
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
-            <a href="#" class="logo">
+            <a href="{{ url_for('index') }}" class="logo">
                 <span class="logo-mark">V</span>
                 <span class="logo-text">Vantage Advisory</span>
             </a>
@@ -25,6 +21,7 @@
                 <a href="#philosophy">Philosophy</a>
                 <a href="#industries">Industries</a>
                 <a href="#engagements">Engagements</a>
+                <a href="{{ url_for('diagnostic') }}">Client Portal</a>
                 <a href="#contact" class="nav-cta">Start a Conversation</a>
             </div>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
@@ -333,7 +330,7 @@
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-brand">
-                <a href="#" class="logo">
+                <a href="{{ url_for('index') }}" class="logo">
                     <span class="logo-mark">V</span>
                     <span class="logo-text">Vantage Advisory</span>
                 </a>
@@ -353,6 +350,5 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
-</body>
-</html>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}

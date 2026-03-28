@@ -1,0 +1,137 @@
+{% extends "tool/base_tool.html" %}
+
+{% block title %}Upload Files - Vantage Diagnostic Tool{% endblock %}
+
+{% block content %}
+<div class="upload-page">
+    <div class="page-header">
+        <h1>Project Diagnostic Upload</h1>
+        <p class="subtitle">Upload your project data files to generate a Red Flag Report identifying the four failure modes.</p>
+    </div>
+
+    <div class="sample-banner">
+        <div class="sample-banner-content">
+            <span class="sample-banner-text">New to the tool?</span>
+            <a href="{{ url_for('diagnostic_sample') }}" class="btn btn-primary btn-small">Try a sample project first &rarr;</a>
+        </div>
+    </div>
+
+    {% if error %}
+    <div class="alert alert-error">
+        <span class="alert-icon">!</span>
+        <span>{{ error }}</span>
+    </div>
+    {% endif %}
+
+    <form action="{{ url_for('analyze') }}" method="post" enctype="multipart/form-data" id="upload-form">
+        <div class="upload-area" id="drop-zone">
+            <div class="upload-icon">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+            </div>
+            <h3>Drop your files here</h3>
+            <p>or click to browse</p>
+            <p class="upload-hint">Accepts Excel (.xlsx) and CSV (.csv) files</p>
+            <input type="file" name="files" id="file-input" multiple accept=".xlsx,.xls,.csv" class="file-input">
+        </div>
+
+        <div class="file-list" id="file-list" style="display: none;">
+            <h4>Selected Files</h4>
+            <div id="file-items"></div>
+        </div>
+
+        <div class="upload-instructions">
+            <h3>What to Upload</h3>
+            <div class="instruction-grid">
+                <div class="instruction-card">
+                    <div class="instruction-icon budget-icon">$</div>
+                    <h4>Budget / Cost Report</h4>
+                    <p>Export from Procore, Sage 300, or your cost management system. Should include cost codes, budgets, actuals, and forecasts.</p>
+                </div>
+                <div class="instruction-card">
+                    <div class="instruction-icon schedule-icon">&#9776;</div>
+                    <h4>Schedule Export</h4>
+                    <p>Export from Primavera P6 or Microsoft Project. Should include activities, durations, dates, float, and relationships.</p>
+                </div>
+                <div class="instruction-card">
+                    <div class="instruction-icon change-icon">&#916;</div>
+                    <h4>Change Order Log</h4>
+                    <p>Export from your project management system. Should include CO numbers, amounts, statuses, types, and dates.</p>
+                </div>
+            </div>
+            <p class="instruction-note">Upload one, two, or all three file types. The tool will auto-detect each file's content and analyze whatever data is available. More data means a more complete diagnosis.</p>
+        </div>
+
+        <div class="submit-section">
+            <button type="submit" class="btn btn-primary btn-large" id="analyze-btn" disabled>
+                <span class="btn-text">Generate Red Flag Report</span>
+                <span class="btn-loading" style="display:none;">Analyzing...</span>
+            </button>
+        </div>
+    </form>
+
+    <div class="sample-cta">
+        <p>Want to see how it works first? <a href="{{ url_for('diagnostic_sample') }}">Try with sample data</a></p>
+    </div>
+</div>
+
+<script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const fileList = document.getElementById('file-list');
+    const fileItems = document.getElementById('file-items');
+    const analyzeBtn = document.getElementById('analyze-btn');
+    const form = document.getElementById('upload-form');
+
+    dropZone.addEventListener('click', () => fileInput.click());
+
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('drag-over');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('drag-over');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('drag-over');
+        fileInput.files = e.dataTransfer.files;
+        updateFileList();
+    });
+
+    fileInput.addEventListener('change', updateFileList);
+
+    function updateFileList() {
+        const files = fileInput.files;
+        if (files.length > 0) {
+            fileList.style.display = 'block';
+            fileItems.innerHTML = '';
+            for (let i = 0; i < files.length; i++) {
+                const div = document.createElement('div');
+                div.className = 'file-item';
+                const ext = files[i].name.split('.').pop().toUpperCase();
+                const size = (files[i].size / 1024).toFixed(1);
+                div.innerHTML = '<span class="file-badge">' + ext + '</span> ' +
+                    '<span class="file-name">' + files[i].name + '</span>' +
+                    '<span class="file-size">' + size + ' KB</span>';
+                fileItems.appendChild(div);
+            }
+            analyzeBtn.disabled = false;
+        } else {
+            fileList.style.display = 'none';
+            analyzeBtn.disabled = true;
+        }
+    }
+
+    form.addEventListener('submit', function() {
+        analyzeBtn.querySelector('.btn-text').style.display = 'none';
+        analyzeBtn.querySelector('.btn-loading').style.display = 'inline';
+        analyzeBtn.disabled = true;
+    });
+</script>
+{% endblock %}
