@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: vantage-advisory
+    runtime: static
+    buildCommand: echo "Static site - no build needed"
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=3600
